@@ -1,7 +1,7 @@
-import React from 'react';
-import Todo from './Todo';
-import { toggleCompleted } from '../actions';
-import { connect } from 'react-redux';
+import React from 'react'
+import Todo from './Todo'
+import { toggleCompleted } from '../actions'
+import { connect } from 'react-redux'
 
 const TodoList = props => {
 	return (
@@ -14,19 +14,19 @@ const TodoList = props => {
 							todo={todo}
 						/>
 					</div>
-				);
+				)
 			})}
 		</div>
-	);
-};
+	)
+}
 
 const mapStateToProps = state => {
 	return {
 		todoList: state.todoList,
-	};
-};
+	}
+}
 
 export default connect(
 	mapStateToProps,
 	{ toggleCompleted },
-)(TodoList);
+)(TodoList)

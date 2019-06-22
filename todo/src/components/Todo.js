@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Todo = props => {
 	return (
@@ -9,7 +9,7 @@ const Todo = props => {
 				{props.todo.task}
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Todo;
+export default Todo
