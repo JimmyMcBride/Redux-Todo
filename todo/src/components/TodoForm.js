@@ -21,16 +21,6 @@ class TodoForm extends Component {
 		})
 	}
 
-	enterNewTodo = e => {
-		if (e.keyCode === 13) {
-			e.preventDefault()
-			this.props.addTodo(this.state.newTodo)
-			this.setState({
-				newTodo: '',
-			})
-		}
-	}
-
 	deleteCompleted = e => {
 		e.preventDefault()
 		this.props.deleteCompleted()
@@ -38,7 +28,7 @@ class TodoForm extends Component {
 
 	render() {
 		return (
-			<form className="todo-form" onSubmit={e => e.preventDefault()}>
+			<form className="todo-form" onSubmit={this.addNewTodo}>
                 <div className='input-btn'>
                     <Input
                         className="todo-input"
@@ -46,7 +36,6 @@ class TodoForm extends Component {
                         name="newTodo"
                         value={this.state.newTodo}
                         onChange={this.handleInputChange}
-                        onKeyDown={this.enterNewTodo}
                         placeholder="Enter Task"
                         required
                     />
